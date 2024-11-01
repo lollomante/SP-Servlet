@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a15d21-614d-499d-b42e-3539d41c3be9" name="Changes" comment="working - no threads">
-      <change afterPath="$PROJECT_DIR$/src/ClientThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/ServletRepository/Servlet1/class/HelloWorld.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/ServletRepository/Servlet1/lib/javax.servlet-api-3.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/ServletRepository/Servlet1/lib/makeHelloWorld.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/ServletRepository/Servlet1/src/HelloWorld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/ServletRepository/Servlet2/lib/javax.servlet-api-3.1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/ServletRepository/Servlet1/HelloWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ManagementConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManagementConsole.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +48,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Documents/GitHub/SP-Servlet/SP-Servlet/WebContent/ServletRepository/Servlet2",
+    "last_opened_file_path": "D:/Documents/GitHub/SP-Servlet/SP-Servlet/WebContent/ServletRepository/Servlet2/lib",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,12 +59,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\GitHub\SP-Servlet\SP-Servlet\WebContent\ServletRepository\Servlet2\lib" />
       <recent name="D:\Documents\GitHub\SP-Servlet\SP-Servlet\WebContent\ServletRepository\Servlet2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\GitHub\SP-Servlet\SP-Servlet\WebContent\ServletRepository\Servlet1\src" />
+      <recent name="D:\Documents\GitHub\SP-Servlet\SP-Servlet\WebContent\ServletRepository\Servlet1\lib" />
+      <recent name="D:\Documents\GitHub\SP-Servlet\SP-Servlet\WebContent\ServletRepository\Servlet1\class" />
       <recent name="D:\Documents\GitHub\SP-Servlet\SP-Servlet\WebContent\ServletRepository\Servlet2" />
       <recent name="D:\Documents\GitHub\SP-Servlet\SP-Servlet" />
-      <recent name="D:\Documents\GitHub\SP-Servlet\SP-Servlet\src" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -80,6 +88,8 @@
       <updated>1730403986223</updated>
       <workItem from="1730403987154" duration="4920000" />
       <workItem from="1730446579318" duration="3216000" />
+      <workItem from="1730481447433" duration="110000" />
+      <workItem from="1730481591167" duration="482000" />
     </task>
     <task id="LOCAL-00001" summary="working - no threads">
       <option name="closed" value="true" />

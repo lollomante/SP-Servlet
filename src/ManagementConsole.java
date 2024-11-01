@@ -131,7 +131,7 @@ public class ManagementConsole extends Thread {
 		URLClassLoader loader = null;
 		try {
 			URL[] urls = new URL[1];
-			urls[0] = new URL("file:" + servletRepository + File.separator);
+			urls[0] = new URL("file:" + servletRepository + File.separator + "class" + File.separator);
 			loader = new URLClassLoader(urls);
 		}
 		catch (IOException e) {
