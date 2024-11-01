@@ -6,6 +6,8 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class HttpServer {
 
@@ -29,6 +31,10 @@ public class HttpServer {
 
 	// port
 	private static final int port = 8080;
+
+	// thread pool
+	private static final int poolSize = 2;
+	private final ExecutorService pool = Executors.newFixedThreadPool(poolSize);
 
 	//----------------------------------------------------------------------//
 
@@ -82,37 +88,9 @@ public class HttpServer {
 				Socket socket = serverSocket.accept();
 				socket.setSoTimeout(2000);
 
-				// initialize input and output streams
-				input = socket.getInputStream();
-				output = socket.getOutputStream();
-
-				// instantiate a new request
-				Request request = new Request(input);
-				request.parse();
-
-				// instantiate a new response
-				Response response = new Response(output);
-				response.setRequest(request);
-
-				// process the request
-				if (request.getUri() != null) {
-
-					// dynamic request
-					if (request.getUri().startsWith("/servlet")) {
-						ServletProcessor processor = new ServletProcessor();
-						processor.process(request, response);
-					}
-
-					// static request
-					else {
-						StaticResourceProcessor processor = new StaticResourceProcessor();
-						processor.process(request, response);
-					}
-				}
-
-				// close the socket
-				socket.close();
-
+				// create a new thread to serve the client and run it
+				ClientThread thread = new ClientThread(socket);
+				pool.execute(thread);
 
 			} catch (SocketTimeoutException se) {
 				if (Shutdown.flag){
