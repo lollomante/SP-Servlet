@@ -6,7 +6,6 @@ import javax.servlet.http.*;
 public class HelloWorld extends HttpServlet {
 
    public HelloWorld(){
-      System.out.println("Helloword loaded");
    }
  
    private String message;
