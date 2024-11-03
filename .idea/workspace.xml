@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a15d21-614d-499d-b42e-3539d41c3be9" name="Changes" comment="working - no threads">
-      <change afterPath="$PROJECT_DIR$/WebContent/ServletRepository/AnnotatedServlets/Alphabet/Alphabet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/ServletRepository/AnnotatedServlets/Alphabet/MyAnnotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/ServletRepository/AnnotatedServlets/Alphabet/javax.servlet-api-3.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyAnnotation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManagementConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManagementConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebContent/ServletRepository/AnnotatedServlets/Alphabet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/ServletRepository/AnnotatedServlets/Alphabet/javax.servlet-api-3.1.0.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,25 +32,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HttpServer.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MyHttpServer.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Documents/GitHub/SP-Servlet/SP-Servlet/src",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HttpServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MyHttpServer.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/GitHub/SP-Servlet/SP-Servlet/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Documents\GitHub\SP-Servlet\SP-Servlet\src" />
@@ -74,8 +69,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -94,6 +89,7 @@
       <workItem from="1730486708475" duration="3675000" />
       <workItem from="1730564940740" duration="961000" />
       <workItem from="1730641307948" duration="4329000" />
+      <workItem from="1730645975756" duration="52000" />
     </task>
     <task id="LOCAL-00001" summary="working - no threads">
       <option name="closed" value="true" />
