@@ -103,6 +103,7 @@ public class ManagementConsole extends Thread {
 		}
 
 		String servletClassName = " ";
+		Class<?> myClass = null;
 
 		// scan the annotated servlet folder for the requested servlet
 		try {
@@ -117,13 +118,13 @@ public class ManagementConsole extends Thread {
 
 					// get the name of the class and load it
 					String className = file.getName().replace(".class", "");
-					Class<?> cls = classLoader.loadClass(className);
+					myClass = classLoader.loadClass(className);
 
 					// Check if it's a servlet and if it has the annotation
-					if (HttpServlet.class.isAssignableFrom(cls) && !Modifier.isAbstract(cls.getModifiers())) {
+					if (HttpServlet.class.isAssignableFrom(myClass) && !Modifier.isAbstract(myClass.getModifiers())) {
 
 						// get the annotation and check if name is the requested one
-						MyAnnotation annotation = cls.getAnnotation(MyAnnotation.class);
+						MyAnnotation annotation = myClass.getAnnotation(MyAnnotation.class);
 						if (annotation != null && annotation.name().equals(servletName)) {
 							// if equal then class was found
 							servletClassName = annotation.value();
@@ -143,10 +144,19 @@ public class ManagementConsole extends Thread {
 			return;
 		}
 
+		// load the class found and
+		HttpServlet servlet = null;
+		try {
+			servlet = (HttpServlet) myClass.newInstance();
+		}
+		catch (Exception e) {
+			System.out.println(e.toString());
+			return;
+		}
 
-        System.out.println(servletClassName + " loaded");
-		//TODO
-
+		// add class to servlet to hash table and print a success message
+		ServletHashTable.put(servletName, servlet);
+		System.out.println("Servlet " + servletName + " added");
 	}
 
 
