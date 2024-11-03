@@ -4,15 +4,18 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Modifier;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.Objects;
 
 import javax.servlet.http.HttpServlet;
 
 public class ManagementConsole extends Thread {
 
 	private String command = " ";
-	private static final String[] admittedCommands =  {"help", "load", "remove", "list", "quit"};
+	private static final String[] admittedCommands =  {"help", "load", "remove", "list", "quit", "load-with-annotations"};
 
 	//constructor
 	ManagementConsole(){
@@ -46,7 +49,7 @@ public class ManagementConsole extends Thread {
 
 
 	// parse and execute a command
-	void executeCommand(String command) {
+	private void executeCommand(String command) {
 		// command = help
 		if (firstWord(command).equals(admittedCommands[0])) {
 
@@ -56,6 +59,7 @@ public class ManagementConsole extends Thread {
 			System.out.println("3) 'remove <servletName>' removes a servlet from repository");
 			System.out.println("4) 'list' lists all servlets");
 			System.out.println("5) 'quit' quits the program");
+			System.out.println("6) 'load-with-annotations <servlet-name>' loads a servlet in repository using annotations instead of metadata file");
 		}
 
 		// command = load
@@ -78,15 +82,76 @@ public class ManagementConsole extends Thread {
 			return;
 		}
 
+		// command = load with annotations
+		else if (firstWord(command).equals(admittedCommands[5])) {
+			loadServletWithAnnotations(secondWord(command));
+		}
+
 		// unrecognised command
 		else {
 			System.out.print("Command unknown: ");
 		}
 	}
 
+	// loads a servlet using annotations
+	private void loadServletWithAnnotations(String servletName) {
+
+		// check that servlet is not already loaded
+		if (ServletHashTable.contains(servletName)) {
+			System.out.println("Servlet " + servletName + " already in the servlet repository");
+			return;
+		}
+
+		String servletClassName = " ";
+
+		// scan the annotated servlet folder for the requested servlet
+		try {
+			File folder = new File(HttpServer.AnnotatedServletDirectory);
+			URL[] urls = { folder.toURI().toURL() };
+			URLClassLoader classLoader = new URLClassLoader(urls);
+
+			for (File file : Objects.requireNonNull(folder.listFiles())) {
+
+				// get all files that ends with '.class'
+				if (file.getName().endsWith(".class")) {
+
+					// get the name of the class and load it
+					String className = file.getName().replace(".class", "");
+					Class<?> cls = classLoader.loadClass(className);
+
+					// Check if it's a servlet and if it has the annotation
+					if (HttpServlet.class.isAssignableFrom(cls) && !Modifier.isAbstract(cls.getModifiers())) {
+
+						// get the annotation and check if name is the requested one
+						MyAnnotation annotation = cls.getAnnotation(MyAnnotation.class);
+						if (annotation != null && annotation.name().equals(servletName)) {
+							// if equal then class was found
+							servletClassName = annotation.value();
+							break;
+						}
+					}
+				}
+			}
+		} catch (MalformedURLException | ClassNotFoundException e) {
+			e.printStackTrace();
+			return;
+        }
+
+		// if no matching class was found print error
+		if (Objects.equals(servletClassName, " ")) {
+			System.out.println("Servlet " + servletName + " Not found!");
+			return;
+		}
+
+
+        System.out.println(servletClassName + " loaded");
+		//TODO
+
+	}
+
 
 	// loads a servlet
-	void loadServlet(String servletName){
+	private void loadServlet(String servletName){
 
 		// check that servlet is not already loaded
 		if (ServletHashTable.contains(servletName)) {
@@ -161,9 +226,8 @@ public class ManagementConsole extends Thread {
 		System.out.println("Servlet " + servletName + " added");
 	}
 
-
 	// unloads a servlet
-	void removeServlet(String servletInternalName){
+	private void removeServlet(String servletInternalName){
 		if (!ServletHashTable.contains(servletInternalName)) {
 			System.out.println("Servlet " + servletInternalName + " not in the servlet repository");
 		} else {
@@ -178,7 +242,7 @@ public class ManagementConsole extends Thread {
 	}
 
 	// get first word of the command
-	String firstWord(String command) {
+	private String firstWord(String command) {
 		if (command.contains(" ")){
 			int index = command.indexOf(" ");
 			return command.substring(0, index);
@@ -188,7 +252,7 @@ public class ManagementConsole extends Thread {
 	}
 
 	// get second word of the command
-	String secondWord(String command) {
+	private String secondWord(String command) {
 		if (command.contains(" ")) {
 			int index = command.indexOf(" ");
 			return command.substring(index+1);
@@ -196,13 +260,5 @@ public class ManagementConsole extends Thread {
 			return command;
 		}
 	}
-
-
-
-
-
-
-
-
 
 }

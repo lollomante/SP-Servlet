@@ -23,6 +23,9 @@ public class HttpServer {
 	// name of the directory that contains servlets
 	public static final String ServletDirectory = WEB_ROOT + File.separator + "ServletRepository";
 
+	// name of the directory that contains annotated servlets
+	public static final String AnnotatedServletDirectory = ServletDirectory + File.separator + "AnnotatedServlets";
+
 	// 404 not found filename
 	public static final String Error404Link = "404.html";
 
