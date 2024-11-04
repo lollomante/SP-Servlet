@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 public class ManagementConsole extends Thread {
 
 	private String command = " ";
-	private static final String[] admittedCommands =  {"help", "load", "remove", "list", "quit", "load-with-annotations"};
+	private static final String[] admittedCommands =  {"help", "load", "remove", "list", "quit", "load-with-annotations", "reload"};
 
 	//constructor
 	ManagementConsole(){
@@ -60,6 +60,7 @@ public class ManagementConsole extends Thread {
 			System.out.println("4) 'list' lists all servlets");
 			System.out.println("5) 'quit' quits the program");
 			System.out.println("6) 'load-with-annotations <servlet-name>' loads a servlet in repository using annotations instead of metadata file");
+			System.out.println("7) 'reload <servlet-name>' reloads the servlet");
 		}
 
 		// command = load
@@ -85,6 +86,12 @@ public class ManagementConsole extends Thread {
 		// command = load with annotations
 		else if (firstWord(command).equals(admittedCommands[5])) {
 			loadServletWithAnnotations(secondWord(command));
+		}
+
+		// commend = reload
+		else if (firstWord(command).equals(admittedCommands[6])) {
+			removeServlet(secondWord(command));
+			loadServlet(secondWord(command));
 		}
 
 		// unrecognised command

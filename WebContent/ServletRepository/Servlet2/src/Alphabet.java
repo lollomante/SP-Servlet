@@ -13,14 +13,14 @@ public class Alphabet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int sleepTime = 100;
+        int sleepTime = 400;
 
         // build the header
         String header1 = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\nContent-Length: ";
         String header2 = "\r\n\r\n";
         String example = "<div> A </div>";
-        
-        int length = (example.length()) * ('Z' - 'A') + 2;
+
+        int length = (example.length()) * 30 - 2;
         
         String header = header1 + length + header2;
 
@@ -34,6 +34,8 @@ public class Alphabet extends HttpServlet {
 
                 response.getWriter().println("<div> " + letter + " </div>");
                 response.getWriter().flush();
+
+                //System.out.println("<div> " + letter + " </div>");
 
                 // Sleep 
                 Thread.sleep(sleepTime);
