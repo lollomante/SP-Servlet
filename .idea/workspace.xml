@@ -10,13 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a15d21-614d-499d-b42e-3539d41c3be9" name="Changes" comment="working - no threads">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SP_Servlet_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/ServletRepository/AnnotatedServlets/Alphabet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/ServletRepository/AnnotatedServlets/Alphabet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/ServletRepository/AnnotatedServlets/Alphabet/Alphabet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/ServletRepository/AnnotatedServlets/Alphabet/Alphabet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/ServletRepository/Servlet2/class/Alphabet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/ServletRepository/Servlet2/class/Alphabet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/ServletRepository/Servlet2/src/Alphabet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/ServletRepository/Servlet2/src/Alphabet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManagementConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ManagementConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HttpServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +116,12 @@
       <workItem from="1730708818461" duration="473000" />
       <workItem from="1730720436298" duration="442000" />
       <workItem from="1730728478782" duration="1045000" />
+      <workItem from="1730738483432" duration="65000" />
+      <workItem from="1730887981513" duration="797000" />
+      <workItem from="1730986139199" duration="894000" />
+      <workItem from="1730995539882" duration="247000" />
+      <workItem from="1730999120251" duration="295000" />
+      <workItem from="1730999427358" duration="228000" />
     </task>
     <task id="LOCAL-00001" summary="working - no threads">
       <option name="closed" value="true" />

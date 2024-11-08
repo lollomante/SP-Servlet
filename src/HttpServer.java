@@ -15,7 +15,9 @@ public class HttpServer {
 	// PARAMETERS:
 
 	// WEB_ROOT --> root of the web content folder
-	public static String WEB_ROOT = "D:\\Documents\\GitHub\\SP-Servlet\\SP-Servlet\\WebContent";
+	//public static String WEB_ROOT = "D:\\Documents\\GitHub\\SP-Servlet\\SP-Servlet\\WebContent";
+	public static String WEB_ROOT = "C:\\ServletPlatform\\WebContent+";
+
 
 	// Directory that contains static content
 	public static final String StaticContentDirectory = WEB_ROOT + File.separator + "StaticContentRepository";
