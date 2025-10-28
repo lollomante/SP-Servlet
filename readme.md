@@ -66,3 +66,4 @@ In the end students are supposed to deliver just an executable jar file, which i
 The executable jar must be included in a folder called SP which also includes a folder called “staticcontentrepository”, hosting the html files, and a folder called “servletrepository”. The servlet repository includes the servlet folders
 as well as a folder named class, hosting the annotated classes.
 
+
